@@ -16,7 +16,7 @@ def visualize(gen, size, max_val, elapsed, name, time_complexity, space_complexi
     fig.text(0.5, 0.01, info, ha="center", color="white", fontsize=9)
 
     def update(frame):
-        arr, i, j, (sorted_left, sorted_right) = frame
+        arr, i, j, sorted_info = frame
         n = len(arr)
         for idx, (bar, val) in enumerate(zip(bars, arr)):
             bar.set_height(val)
@@ -24,10 +24,11 @@ def visualize(gen, size, max_val, elapsed, name, time_complexity, space_complexi
                 bar.set_facecolor("#87ceeb")
             elif idx == j:
                 bar.set_facecolor("#ff6b6b")
-            elif idx < sorted_left or idx >= n - sorted_right:
-                bar.set_facecolor("#50c878")
+            elif isinstance(sorted_info, frozenset):
+                bar.set_facecolor("#50c878" if idx in sorted_info else "#c0c0c0")
             else:
-                bar.set_facecolor("#c0c0c0")
+                sorted_left, sorted_right = sorted_info
+                bar.set_facecolor("#50c878" if idx < sorted_left or idx >= n - sorted_right else "#c0c0c0")
             bar.set_edgecolor("#1a1a1a")
 
     ani = animation.FuncAnimation(
