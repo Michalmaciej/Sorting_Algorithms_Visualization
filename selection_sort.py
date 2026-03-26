@@ -4,10 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 #creating unsorted list with the numbers
-numbers = random.sample(range(1, 20001), 20000)
-
-#creating list of lists to animate sorting
-sel_sort_frames = []
+numbers = random.sample(range(1, 101), 100)
 
 #decorator to measure time
 def measure_time(func):
@@ -22,7 +19,6 @@ def measure_time(func):
 #selection sort algorithm with time meausure
 @measure_time
 def selection_sort(numbers):
-    sel_sort_frames.append(numbers.copy())
     for i in range(len(numbers)-1):
         smallest = 0
         index = 0
@@ -32,36 +28,62 @@ def selection_sort(numbers):
                 index = j
         if numbers[i] > smallest:
             numbers[i], numbers[index] = smallest, numbers[i]
-            sel_sort_frames.append(numbers.copy())
     return numbers
 
-#creating unsorted list with the numbers
-numbers = random.sample(range(1, 101), 100)
-sorted_numbers, elapsed = selection_sort(numbers)
-print(sorted_numbers[0:100])
-print(f"Czas: {elapsed:.6f}s")
+#selection sort algorithm generating data to animation
+def selection_sort_gen(numbers):
+    yield (numbers.copy(), -1, -1, -1)
+    for i in range(len(numbers)-1):
+        smallest = 0
+        index = 0
+        for j in range(i+1, len(numbers)):
+            if numbers[j] < smallest or smallest == 0:
+                smallest = numbers[j]
+                index = j
+            yield (numbers.copy(), i, j, i - 1)
+        if numbers[i] > smallest:
+            numbers[i], numbers[index] = smallest, numbers[i]
+        yield (numbers.copy(), -1, -1, i)
+    yield (numbers.copy(), -1, -1, len(numbers) - 1)
 
-def visualize(frames):
+#function to visualize sorting proces
+def visualize(gen, size, max_val):
     fig, ax = plt.subplots(facecolor="#2b2b2b")
     ax.set_facecolor("#2b2b2b")
-    bars = ax.bar(range(len(frames[0])), frames[0], color="#c0c0c0")
+    bars = ax.bar(range(size), [0] * size, color="#c0c0c0", edgecolor="#1a1a1a", linewidth=0.5)
+    ax.set_ylim(0, max_val * 1.05)
     ax.set_title("Selection Sort", color="white")
     ax.tick_params(colors="white")
+
     for spine in ax.spines.values():
         spine.set_edgecolor("#444")
 
-    def update(frame_idx):
-        for bar, val in zip(bars, frames[frame_idx]):
+    def update(frame):
+        arr, i, j, sorted_up_to = frame
+        for idx, (bar, val) in enumerate(zip(bars, arr)):
             bar.set_height(val)
-        ax.set_xlabel(f"Krok {frame_idx + 1}/{len(frames)}", color="white")
+            if idx <= sorted_up_to:
+                bar.set_facecolor("#50c878")
+            elif idx == i:
+                bar.set_facecolor("#87ceeb")
+            elif idx == j:
+                bar.set_facecolor("#ff6b6b")
+            else:
+                bar.set_facecolor("#c0c0c0")
+            bar.set_edgecolor("#1a1a1a")
 
     ani = animation.FuncAnimation(
         fig, update,
-        frames=len(frames),
-        interval=200,
-        repeat=False
+        frames=gen,
+        interval=10,
+        repeat=False,
+        cache_frame_data=False
     )
-    plt.show()
+    plt.show(block=True)
     return ani
 
-ani = visualize(sel_sort_frames)
+#sorting and measuring time
+sorted_numbers, elapsed = selection_sort(numbers.copy())
+
+#vizualization
+ani = visualize(selection_sort_gen(numbers.copy()), len(numbers), max(numbers))
