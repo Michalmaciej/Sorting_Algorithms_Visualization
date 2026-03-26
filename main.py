@@ -9,11 +9,12 @@ from cycle_sort import CycleSort
 from three_way_merge_sort import ThreeWayMergeSort
 from counting_sort import CountingSort
 from radix_sort import RadixSort
+from bucket_sort import BucketSort
 from visualizer import visualize
 
 #list of algorithms to use
-#algorithms = [CountingSort, ThreeWayMergeSort, CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
-algorithms = [RadixSort]
+#algorithms = [RadixSort, CountingSort, ThreeWayMergeSort, CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
+algorithms = [BucketSort]
 
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)

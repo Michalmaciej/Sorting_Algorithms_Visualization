@@ -2,8 +2,8 @@ from base_sort import BaseSort
 from decorators import measure_time
 
 class RadixSort(BaseSort):
-    time_complexity = "O(n * k)"
-    space_complexity = "O(n + k)"
+    time_complexity = "O(d * (n + b))"
+    space_complexity = "O(n + b)"
 
     @measure_time
     def sort(self):
