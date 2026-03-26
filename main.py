@@ -4,11 +4,12 @@ from bubble_sort import BubbleSort
 from insertion_sort import InsertionSort
 from merge_sort import MergeSort
 from quick_sort import QuickSort
+from heap_sort import HeapSort
 from visualizer import visualize
 
 #list of algorithms to use
-algorithms = [QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
-
+#algorithms = [QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
+algorithms = [HeapSort]
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)
 
