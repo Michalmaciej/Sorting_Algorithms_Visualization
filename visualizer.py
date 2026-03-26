@@ -31,6 +31,11 @@ def visualize(gen, size, max_val, elapsed, name, time_complexity, space_complexi
                 bar.set_facecolor("#50c878" if idx < sorted_left or idx >= n - sorted_right else "#c0c0c0")
             bar.set_edgecolor("#1a1a1a")
 
+    first_frame = next(gen)
+    update(first_frame)
+    plt.show(block=False)
+    plt.pause(5)
+
     ani = animation.FuncAnimation(
         fig, update,
         frames=gen,
