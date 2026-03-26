@@ -5,7 +5,7 @@ class BubbleSort(BaseSort):
     time_complexity = "O(n²)"
     space_complexity = "O(1)"
 
-    #selection sort algorithm with time meausure
+    #bubble sort algorithm with time meausure
     @measure_time
     def sort(self):
         nums = self.numbers.copy()
@@ -19,7 +19,7 @@ class BubbleSort(BaseSort):
             if not swap: break
         return nums
 
-    #selection sort algorithm generating data to animation
+    #bubble sort algorithm generating data to animation
     def sort_gen(self):
         nums = self.numbers.copy()
         yield (nums.copy(), -1, -1, (0, 0))

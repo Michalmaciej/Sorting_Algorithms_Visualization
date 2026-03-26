@@ -20,12 +20,12 @@ def visualize(gen, size, max_val, elapsed, name, time_complexity, space_complexi
         n = len(arr)
         for idx, (bar, val) in enumerate(zip(bars, arr)):
             bar.set_height(val)
-            if idx < sorted_left or idx >= n - sorted_right:
-                bar.set_facecolor("#50c878")
-            elif idx == i:
+            if idx == i:
                 bar.set_facecolor("#87ceeb")
             elif idx == j:
                 bar.set_facecolor("#ff6b6b")
+            elif idx < sorted_left or idx >= n - sorted_right:
+                bar.set_facecolor("#50c878")
             else:
                 bar.set_facecolor("#c0c0c0")
             bar.set_edgecolor("#1a1a1a")
