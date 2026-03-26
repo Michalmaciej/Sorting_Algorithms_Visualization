@@ -106,14 +106,17 @@ class ThreeWayMergeSort(BaseSort):
                 min_idx = 2
 
             if min_idx == 0:
+                source = left + i
                 nums[index] = left_arr[i]
                 i += 1
             elif min_idx == 1:
+                source = mid1 + 1 + j
                 nums[index] = mid_arr[j]
                 j += 1
             else:
+                source = mid2 + 1 + k
                 nums[index] = right_arr[k]
                 k += 1
 
-            yield (nums.copy(), index, -1, (0, 0))
+            yield (nums.copy(), index, source, (0, 0))
             index += 1
