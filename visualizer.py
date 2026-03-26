@@ -34,7 +34,7 @@ def visualize(gen, size, max_val, elapsed, name, time_complexity, space_complexi
     first_frame = next(gen)
     update(first_frame)
     plt.show(block=False)
-    plt.pause(3)
+    plt.pause(5)
 
     ani = animation.FuncAnimation(
         fig, update,
