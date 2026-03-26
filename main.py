@@ -1,9 +1,10 @@
 import random
 from selection_sort import SelectionSort
+from bubble_sort import BubbleSort
 from visualizer import visualize
 
 #list of algorithms to use
-algorithms = [SelectionSort]
+algorithms = [BubbleSort, SelectionSort]
 
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)

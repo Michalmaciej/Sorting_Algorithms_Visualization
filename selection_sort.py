@@ -23,7 +23,7 @@ class SelectionSort(BaseSort):
     #selection sort algorithm generating data to animation
     def sort_gen(self):
         nums = self.numbers.copy()
-        yield (nums.copy(), -1, -1, -1)
+        yield (nums.copy(), -1, -1, (0, 0))
         for i in range(len(nums)-1):
             smallest = 0
             index = 0
@@ -31,9 +31,9 @@ class SelectionSort(BaseSort):
                 if nums[j] < smallest or smallest == 0:
                     smallest = nums[j]
                     index = j
-                yield (nums.copy(), i, j, i - 1)
+                yield (nums.copy(), i, j, (i, 0))
             if nums[i] > smallest:
                 nums[i], nums[index] = smallest, nums[i]
-            yield (nums.copy(), -1, -1, i)
-        yield (nums.copy(), -1, -1, len(nums) - 1)
+            yield (nums.copy(), -1, -1, (i + 1, 0))
+        yield (nums.copy(), -1, -1, (len(nums), 0))
 
