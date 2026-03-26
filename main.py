@@ -5,11 +5,12 @@ from insertion_sort import InsertionSort
 from merge_sort import MergeSort
 from quick_sort import QuickSort
 from heap_sort import HeapSort
+from cycle_sort import CycleSort
 from visualizer import visualize
 
 #list of algorithms to use
-#algorithms = [QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
-algorithms = [HeapSort]
+#algorithms = [HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
+algorithms = [CycleSort]
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)
 
