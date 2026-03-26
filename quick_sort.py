@@ -2,8 +2,8 @@ from base_sort import BaseSort
 from decorators import measure_time
 
 class QuickSort(BaseSort):
-    time_complexity = "O(n log n)"
-    space_complexity = "O(n)"
+    time_complexity = "Best: Ω(n log n), Worst: O(n²)"
+    space_complexity = "Best: O(log n), Worst: O(n)"
 
     @measure_time
     def sort(self):
