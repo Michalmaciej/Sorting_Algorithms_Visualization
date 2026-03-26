@@ -47,7 +47,7 @@ def selection_sort_gen(numbers):
     yield (numbers.copy(), -1, -1, len(numbers) - 1)
 
 #function to visualize sorting proces
-def visualize(gen, size, max_val):
+def visualize(gen, size, max_val, elapsed):
     fig, ax = plt.subplots(facecolor="#2b2b2b")
     ax.set_facecolor("#2b2b2b")
     bars = ax.bar(range(size), [0] * size, color="#c0c0c0", edgecolor="#1a1a1a", linewidth=0.5)
@@ -57,6 +57,9 @@ def visualize(gen, size, max_val):
 
     for spine in ax.spines.values():
         spine.set_edgecolor("#444")
+
+    info = f"Czas: {elapsed:.10f}s  |  Złożoność czasowa: O(n²)  |  Złożoność miejsca: O(1)"
+    fig.text(0.5, 0.01, info, ha="center", color="white", fontsize=9)
 
     def update(frame):
         arr, i, j, sorted_up_to = frame
@@ -86,4 +89,4 @@ def visualize(gen, size, max_val):
 sorted_numbers, elapsed = selection_sort(numbers.copy())
 
 #vizualization
-ani = visualize(selection_sort_gen(numbers.copy()), len(numbers), max(numbers))
+ani = visualize(selection_sort_gen(numbers.copy()), len(numbers), max(numbers), elapsed)
