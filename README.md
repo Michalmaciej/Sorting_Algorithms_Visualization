@@ -106,43 +106,43 @@ numbers = random.sample(range(1, 101), 100)
 ## Recordings
 
 ### Selection Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/selection%20sort.mp4
+https://github.com/user-attachments/assets/f469b322-7079-4be5-9b28-bec420f55bce
 
 ### Bubble Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/bubble%20sort.mp4
+https://github.com/user-attachments/assets/edb8f87a-edba-41bc-9cfd-6bc9bfd310f1
 
 ### Insertion Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/insertion%20sort.mp4
+https://github.com/user-attachments/assets/8cf3f88c-57af-427d-9ffd-daa73d6e5fc5
 
 ### Merge Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/merge%20sort.mp4
+https://github.com/user-attachments/assets/44baa54e-29fb-4f4e-8b26-9b5707dafcd0
 
 ### Quick Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/quick%20sort.mp4
+https://github.com/user-attachments/assets/526430ae-e1ff-4080-88fa-1ec92ac01176
 
 ### Heap Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/heap%20sort.mp4
+https://github.com/user-attachments/assets/90fc0aea-65d4-4eb5-84cf-d612aba5efb9
 
 ### Counting Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/counting%20sort.mp4
+https://github.com/user-attachments/assets/84916c69-bc7f-4ab9-9e1f-81ccd31f45e6
 
 ### Radix Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/radix%20sort.mp4
+https://github.com/user-attachments/assets/910670b7-d32e-4833-b25d-94dcd5ffc87b
 
 ### Bucket Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/bucket%20sort.mp4
+https://github.com/user-attachments/assets/c04bd728-e14b-410a-8771-e89680079456
 
 ### Cycle Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/cycle%20sort.mp4
+https://github.com/user-attachments/assets/44dd9fec-82d3-48b4-bda5-1d76227ff215
 
 ### Pigeonhole Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/pigeonhole%20sort.mp4
+https://github.com/user-attachments/assets/17ebc7f7-8076-455c-b907-82a55fbe3260
 
 ### Tim Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/tim%20sort.mp4
+https://github.com/user-attachments/assets/1453eee9-326e-4eee-ab31-49a2585e91ed
 
 ### Intro Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/intro%20sort.mp4
+https://github.com/user-attachments/assets/369dfe83-a6d2-4034-b400-e88d566fe486
 
 ### 3-Way Merge Sort
-https://github.com/Michalmaciej/Sorting_Algorithms_Visualization/blob/pigeon/records/threeway%20merge%20sort.mp4
+https://github.com/user-attachments/assets/812d70fe-1777-401c-9d1e-9c93ec756461
