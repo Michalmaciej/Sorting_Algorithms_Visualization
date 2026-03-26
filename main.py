@@ -12,11 +12,11 @@ from radix_sort import RadixSort
 from bucket_sort import BucketSort
 from pigeonhole_sort import PigeonholeSort
 from intro_sort import IntroSort
+from tim_sort import TimSort
 from visualizer import visualize
 
 #list of algorithms to use
-#algorithms = [PigeonholeSort, BucketSort, RadixSort, CountingSort, ThreeWayMergeSort, CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
-algorithms = [IntroSort]
+algorithms = [SelectionSort, TimSort, IntroSort, PigeonholeSort, BucketSort, RadixSort, CountingSort, ThreeWayMergeSort, CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort]
 
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)
