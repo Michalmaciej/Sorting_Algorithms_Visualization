@@ -7,11 +7,12 @@ from quick_sort import QuickSort
 from heap_sort import HeapSort
 from cycle_sort import CycleSort
 from three_way_merge_sort import ThreeWayMergeSort
+from counting_sort import CountingSort
 from visualizer import visualize
 
 #list of algorithms to use
-#algorithms = [CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
-algorithms = [ThreeWayMergeSort]
+#algorithms = [ThreeWayMergeSort, CycleSort, HeapSort, QuickSort, MergeSort, InsertionSort, BubbleSort, SelectionSort]
+algorithms = [CountingSort]
 #creating unsorted list with the numbers
 numbers = random.sample(range(1, 101), 100)
 
